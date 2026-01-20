@@ -1,0 +1,90 @@
+/* CSS  변수 */
+/*
+    - 디자인 값을 한 군데서 관리
+    - 테마 변경 / 유지보수 쉬움
+*/
+
+:root{
+    --color-primay:#2563eb;
+    --space-md: 16px;
+}
+
+button{
+    background: var(--color-primay);
+    padding: var(--space-md);
+}
+
+/* 클래스 설계 방식 */
+/* 
+    모양 / 역할 / 상태를 분리해서 조합을 함.
+
+    예시:
+    버튼의 색깔과 사이즈를 지정 하는 클래스 명
+    .redBigButton -> X
+    .btn.red.md -> O
+    .btn.primary -> O
+*/
+
+/* 상태 스타일 */
+
+/*
+    상태 스타일 (active, disabled, hover)
+    버튼 같은 UI는 상태 디자인이 있어야 UX가 좋아짐.
+    JS처리 하기전에 CSS 먼저 처리가능
+*/
+
+.btn.active{
+
+}
+.btn.disabled{
+
+}
+.btn:hover{
+
+}
+
+/* position 핵심 */
+/*
+    position: relative;
+    position: absolute;
+
+    위 두가지는 
+    absolute는 가장 가까운 부모의 relative 기준으로 움직인다.
+
+*/
+
+/* UI 구조 분리 개념 */
+
+/*
+    UI는 항상 "큰 구조 -> 작은 부품" 순서로 설계한다.
+*/
+
+/* 페이지 전체 툴 */
+.layout{}
+.wrapper{}
+
+/* 
+    Section(페이지 큰 구역) 
+    페이지를 의미 단위로 나누는 영역
+*/
+
+.section{}
+.feature{}
+.hero{}
+
+/* 
+    Container(내용 정렬 박스)
+    섹션 안에서 폭 제한 + 가운데 정렬
+*/
+
+.container{}
+.inner{}
+
+/*
+    Component(UI 부품)
+    여러 곳에서 재사용되는 UI 단위
+*/
+
+.card{}
+.badge{}
+.post{}
